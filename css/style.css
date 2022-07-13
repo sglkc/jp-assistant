@@ -6,20 +6,20 @@ h1 {
   margin-bottom: 1ch;
 }
 
-#background,
-#background > * {
+.bg {
+  position: absolute;
   z-index: -100;
   width: 100%;
-  height: 50%;
-  position: fixed;
+  height: 100%;
+  margin-top: -1rem;
+  left: 0;
 }
 
-#background > :nth-child(1) {
+#ime > .bg, body {
   background: #CCD1D9;
 }
 
-#background > :nth-child(2) {
-  top: 50%;
+#deconjugator > .bg {
   background: #AAB2BD;
 }
 
@@ -38,4 +38,41 @@ h1 {
   position: absolute;
   top: 1ch;
   right: 2rem;
+}
+
+#deconjugator-list .card ul > li:not(:last-child)::after {
+  z-index: 200;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  content: '⬇️';
+}
+
+.container {
+  padding: 0.75;
+  max-width: 100% !important;
+}
+
+@media (min-width: 576px) {
+  .container {
+    padding: 0 6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 11rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 0 18rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 25rem;
+  }
 }
