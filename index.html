@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Japanese Utilities</title>
+    <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+					integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+					rel="stylesheet" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+		<div id="background">
+			<div></div>
+			<div></div>
+		</div>
+
+		<main class="container py-5">
+			<h1 class="mb-5 text-center fw-bold">Japanese Utilities</h1>
+
+			<div id="ime" class="row">
+				<div class="fw-bold">Japanese Input Method Editor (IME)</div>
+				<div class="fw-light">Type in lowercase for Hiragana or uppercase for Katakana.</div>
+				<div class="mt-2 textarea-container">
+					<textarea id="wanakana" class="form-control" placeholder="Type here"></textarea>
+					<button class="btn btn-primary btn-copy" data-copy="wanakana" data-bs-toggle="tooltip" data-bs-trigger="click" title="Copied!">Copy</button>
+				</div>
+			</div>
+		</main>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+						integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+						crossorigin="anonymous"></script>
+		<script src="js/bundle.js"></script>
+	</body>
+</html>

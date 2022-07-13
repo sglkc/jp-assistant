@@ -1,0 +1,28 @@
+{
+  "name": "jp-utilities",
+  "version": "1.0.0",
+  "description": "Japanese utilities from an input method to furigana generator",
+  "scripts": {
+    "build": "browserify js/script.js -o js/bundle.js",
+    "dev": "budo js/script.js:js/bundle.js --live -- --debug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sglkc/jp-utilities.git"
+  },
+  "author": "sglkc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sglkc/jp-utilities/issues"
+  },
+  "homepage": "https://github.com/sglkc/jp-utilities#readme",
+  "devDependencies": {
+    "babelify": "^10.0.0",
+    "browserify": "^17.0.0",
+    "budo": "^11.7.0",
+    "jp-verbs": "^1.0.1",
+    "kuroshiro": "^1.1.2",
+    "kuroshiro-analyzer-kuromoji": "^1.1.0",
+    "wanakana": "^5.0.2"
+  }
+}
