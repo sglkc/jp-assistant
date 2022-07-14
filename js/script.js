@@ -9,6 +9,12 @@ $('.wanakana').each((i, elm) => {
   Wanakana.bind(elm);
 });
 
+/* Text area auto-resize */
+$('textarea').on('input', function () {
+  this.style.height = 'auto';
+  this.style.height = this.scrollHeight + 'px';
+});
+
 /* Copy button listener */
 $('.btn-copy').click(function () {
   const id = this.dataset.copy;
