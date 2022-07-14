@@ -10,12 +10,15 @@ html, body {
 body {
   display: flex;
   flex-direction: column;
-  background-color: #ffd454;
-  font-family: 'Albert Sans', sans-serif;
+  font-family: 'Albert Sans', var(--bs-font-sans-serif);
 }
 
-main {
-  flex-grow: 1;
+header {
+  background-color: #ffd454;
+}
+
+footer {
+  background-color: #A0D468;
 }
 
 footer a {
@@ -43,20 +46,11 @@ footer a {
   border-color: #E9573F;
 }
 
-.bg {
-  position: absolute;
-  z-index: -100;
-  width: 100%;
-  height: 85%;
-  margin-top: -1rem;
-  left: 0;
-}
-
-#ime > .bg {
+#ime {
   background-color: #eeedf2;
 }
 
-#deconjugator > .bg {
+#deconjugator {
   background-color: #E7E7E7;
 }
 
@@ -78,22 +72,6 @@ footer a {
   right: 1ch;
 }
 
-#deconjugator-list {
-  margin: 0;
-}
-
-@media (min-width: 576px) {
-  #deconjugator-list {
-    margin: 0 -5rem;
-  }
-}
-
-@media (min-width: 768px) {
-  #deconjugator-list {
-    margin: 0 -10rem;
-  }
-}
-
 #deconjugator-list .card ul > li:not(:last-child)::after {
   z-index: 200;
   position: absolute;
@@ -101,6 +79,12 @@ footer a {
   left: 2em;
   right: 2em;
   content: '⬇️';
+}
+
+.text-bg-secondary {
+  background-color: var(--bs-gray-600) !important;
+  color: var(--bs-gray-200) !important;
+  border-color: var(--bs-gray-500);
 }
 
 .container {
