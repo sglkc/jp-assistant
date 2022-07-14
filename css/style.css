@@ -1,15 +1,30 @@
 :root {
-  --bs-link-color: #e56d4b;
+  --bs-link-color: #cc6043;
   --bs-link-hover-color: #DA4453;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  background-color: #FFCE54;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffd454;
   font-family: 'Albert Sans', sans-serif;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer a {
+  color: #357;
 }
 
 .form-control:focus, .btn:focus {
   box-shadow: 0 0 0 0.25rem #FC6E514F;
+  border-color: #FC6E51;
 }
 
 .btn-primary {
@@ -38,7 +53,7 @@ body {
 }
 
 #ime > .bg {
-  background-color: #CCD1D9;
+  background-color: #eeedf2;
 }
 
 #deconjugator > .bg {
