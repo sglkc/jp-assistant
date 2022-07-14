@@ -77,6 +77,22 @@ footer a {
   right: 2rem;
 }
 
+#deconjugator-list {
+  margin: 0;
+}
+
+@media (min-width: 576px) {
+  #deconjugator-list {
+    margin: 0 -5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  #deconjugator-list {
+    margin: 0 -10rem;
+  }
+}
+
 #deconjugator-list .card ul > li:not(:last-child)::after {
   z-index: 200;
   position: absolute;
@@ -88,7 +104,7 @@ footer a {
 
 .container {
   padding: 0.75;
-  max-width: 100% !important;
+  max-width: 100%;
 }
 
 @media (min-width: 576px) {
