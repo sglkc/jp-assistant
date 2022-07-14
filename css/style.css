@@ -1,9 +1,31 @@
+:root {
+  --bs-link-color: #e56d4b;
+  --bs-link-hover-color: #DA4453;
+}
+
 body {
+  background-color: #FFCE54;
   font-family: 'Albert Sans', sans-serif;
 }
 
-h1 {
-  margin-bottom: 1ch;
+.form-control:focus, .btn:focus {
+  box-shadow: 0 0 0 0.25rem #FC6E514F;
+}
+
+.btn-primary {
+  background-color: #FC6E51;
+  border-color: #FC6E51;
+}
+
+.btn-outline-primary {
+  color: #FC6E51;
+  border-color: #FC6E51;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline:focus,
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  background-color: #E9573F;
+  border-color: #E9573F;
 }
 
 .bg {
@@ -15,12 +37,12 @@ h1 {
   left: 0;
 }
 
-#ime > .bg, body {
-  background: #CCD1D9;
+#ime > .bg {
+  background-color: #CCD1D9;
 }
 
 #deconjugator > .bg {
-  background: #AAB2BD;
+  background-color: #E7E7E7;
 }
 
 .textarea-container {
@@ -43,8 +65,9 @@ h1 {
 #deconjugator-list .card ul > li:not(:last-child)::after {
   z-index: 200;
   position: absolute;
-  bottom: -12px;
-  left: 50%;
+  bottom: -1em;
+  left: 2em;
+  right: 2em;
   content: '⬇️';
 }
 

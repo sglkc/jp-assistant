@@ -14,10 +14,21 @@
 	</head>
 
 	<body>
-		<main class="container py-5 position-relative">
-			<h1 class="mb-5 text-center fw-bold">Japanese Utilities 🔰</h1>
-
-			<div id="ime" class="mb-5 position-relative">
+		<div class="mt-5 d-flex flex-column justify-content-center text-center">
+			<span class="fs-1 fw-bold">Japanese Utilities</span>
+			<nav class="mx-auto py-3 fs-5">
+				<ul class="nav justify-content-center">
+					<li class="nav-item">
+						<a class="nav-link" href="#ime">IME</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#deconjugator">Deconjugator</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+		<main class="container py-4 position-relative">
+			<div id="ime" class="mb-5">
 				<div class="bg"></div>
 				<div class="fw-bold">⌨️ Input Method Editor (IME)</div>
 				<div class="fw-light">Type in lowercase for Hiragana or uppercase for Katakana.</div>
@@ -31,14 +42,14 @@
 				<div class="bg"></div>
 				<div class="fw-bold">🖇️ Verb Deconjugator</div>
 				<div class="fw-light">Type in the verb you want to deconjugate.</div>
-				<form class="my-2 input-group" autocomplete="off">
+				<form class="mt-2 mb-3 input-group" autocomplete="off">
 					<input class="wanakana form-control" placeholder="Type here" name="deconjugate">
 					<button class="btn btn-primary" type="submit">Deconjugate</button>
 				</form>
 				<div id="deconjugator-list" class="row row-cols-2 g-2 justify-content-center">
 					<div id="deconjugator-template" class="d-none col-12 col-sm-8 col-md-6">
 						<div class="card p-0 border-0 bg-transparent text-center">
-							<a class="card-header h5 text-bg-secondary" href="" target="_blank" title="Open in Jisho.org"></a>
+							<a class="card-header h5 fw-semibold text-bg-secondary" href="" target="_blank" title="Open in Jisho.org"></a>
 							<div class="card-body bg-light rounded-bottom p-2 flex-grow-0">
 								<div class="card-text">
 									<ul class="list-group small"></ul>

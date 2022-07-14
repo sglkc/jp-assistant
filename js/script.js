@@ -35,7 +35,9 @@ function deconjugate() {
 
   $('#deconjugator-list > :not(#deconjugator-template)').remove();
 
-  Deconjugator.unconjugate(verb).forEach((word) => {
+  if (!verb.length) return;
+
+  Deconjugator.unconjugate(verb, true).forEach((word, index, words) => {
     $('.card-header', template).text(word.base)
       .attr('href', 'https://jisho.org/search/' + word.base);
 
