@@ -43,7 +43,15 @@ function deconjugate() {
 
   if (!verb.length) return;
 
-  Deconjugator.unconjugate(verb, true).forEach((word, index, words) => {
+  const words = Deconjugator.unconjugate(verb, true).filter((word, i, self) => {
+    const current = JSON.stringify(word);
+
+    return i === self.findIndex((obj) => {
+      return JSON.stringify(obj) === current;
+    });
+  });
+
+  words.forEach((word, index, words) => {
     $('.card-header', template).text(word.base)
       .attr('href', 'https://jisho.org/search/' + word.base);
 
