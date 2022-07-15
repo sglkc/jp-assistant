@@ -82,7 +82,7 @@ if (new URLSearchParams(location.search).get('deconjugate')) {
 }
 
 /* Deconjugator submit */
-$('#deconjugator > form').submit((e) => {
+$('#deconjugator form').submit((e) => {
   const verb = $('[name="deconjugate"]').val();
 
   e.preventDefault();

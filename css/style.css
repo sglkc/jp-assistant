@@ -1,6 +1,6 @@
 :root {
   --bs-link-color: #cc6043;
-  --bs-link-hover-color: #DA4453;
+  --bs-link-hover-color: #872910;
 }
 
 html, body {
@@ -44,6 +44,12 @@ footer a {
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
   background-color: #E9573F;
   border-color: #E9573F;
+}
+
+@media (max-width: 768px) {
+  .small-sm {
+    font-size: .875em;
+  }
 }
 
 #ime {
