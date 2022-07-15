@@ -12,7 +12,6 @@
 			rel="stylesheet" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
-
 	<body>
 		<header class="pt-5 d-flex flex-column justify-content-center flex-grow-1">
 			<span class="fs-1 fw-bold text-center">🔰 Japanese Utilities</span>
@@ -32,7 +31,7 @@
 				<div class="fw-bold">⌨️ Input Method Editor (IME)</div>
 				<div class="fw-light">Type in lowercase for Hiragana or uppercase for Katakana, you may also paste texts to convert it to kana.</div>
 				<div class="mt-2 textarea-container">
-					<textarea id="wanakana" class="wanakana form-control" placeholder="Type here"></textarea>
+					<textarea class="wanakana form-control" placeholder="Type here"></textarea>
 					<button class="btn btn-primary btn-copy" data-copy="wanakana">Copy</button>
 				</div>
 			</div>
@@ -58,6 +57,20 @@
 						</div>
 					</div>
 				</div>
+		</section>
+		<section id="furigana" class="container-fluid py-4">
+			<div class="container">
+				<div class="fw-bold">🔤 Furigana Generator</div>
+				<div class="fw-light">Generates furigana (kanji readings on top) in real-time.</div>
+				<div class="small">(Due to limitations, only basic readings are used and may not be 100% accurate.)</div>
+				<div class="textarea-container">
+					<textarea class="wanakana form-control mt-2" placeholder="Type here" disabled></textarea>
+					<button class="btn btn-primary">Initialize</button>
+				</div>
+				<div id="furigana-result" class="mt-2">
+					<span>You have initialize the language processor before using this!</span>
+				</div>
+			</div>
 		</section>
 		<footer class="py-4 small-sm">
 			<div class="container-sm d-flex justify-content-between">

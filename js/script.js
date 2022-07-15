@@ -97,3 +97,32 @@ $('#deconjugator form').submit((e) => {
   history.replaceState(null, "", '?deconjugate=' + verb);
   deconjugate();
 });
+
+/* Init Kuroshiro */
+$('#furigana .textarea-container button').click(() => {
+  window.kuroshiro = new Kuroshiro();
+
+  $('#furigana-result').removeClass('text-danger');
+  $('#furigana-result').html('<div class="spinner-border"></div>');
+  $('#furigana .textarea-container button').addClass('d-none');
+
+  kuroshiro.init(new KuromojiAnalyzer())
+    .then(() => {
+      $('#furigana-result').html('Result will be showed here');
+      $('#furigana textarea').attr('disabled', false);
+    })
+    .catch((e, a) => {
+      $('#furigana .textarea-container button').removeClass('d-none');
+      $('#furigana-result').html('Unexpected error: ' + e);
+      $('#furigana-result').addClass('text-danger');
+    });
+});
+
+/* Furigana auto-submit */
+$('#furigana textarea').on('input', async function () {
+  const text = this.value;
+  const result = await kuroshiro.convert(text, { to: 'hiragana', mode: 'furigana' });
+  const display = result || 'Result will be showed here';
+
+  $('#furigana-result').html(display);
+});
