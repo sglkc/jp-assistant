@@ -1,4 +1,6 @@
 :root {
+  --primary-background: #FC6E51;
+  --hover-background: #E9573F;
   --bs-link-color: #cc6043;
   --bs-link-hover-color: #872910;
 }
@@ -27,23 +29,41 @@ footer a {
 
 .form-control:focus, .btn:focus {
   box-shadow: 0 0 0 0.25rem #FC6E514F;
-  border-color: #FC6E51;
+  border-color: var(--primary-background);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background-color: var(--primary-background);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-ms-thumb {
+  background-color: var(--primary-background);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background-color: var(--primary-background);
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .btn-primary {
-  background-color: #FC6E51;
-  border-color: #FC6E51;
+  background-color: var(--primary-background);
+  border-color: var(--primary-background);
 }
 
 .btn-outline-primary {
-  color: #FC6E51;
-  border-color: #FC6E51;
+  color: var(--primary-background);
+  border-color: var(--primary-background);
 }
 
 .btn-outline-primary:hover, .btn-outline-primary:active, .btn-outline:focus,
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-  background-color: #E9573F;
-  border-color: #E9573F;
+  background-color: var(--hover-background);
+  border-color: var(--hover-background);
 }
 
 .popover-header {
@@ -90,6 +110,10 @@ section:nth-child(even) {
   left: 2em;
   right: 2em;
   content: '⬇️';
+}
+
+#convert-result {
+  white-space: pre-wrap;
 }
 
 .text-bg-secondary {

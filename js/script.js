@@ -4,6 +4,21 @@ window.Kuroshiro = require('kuroshiro');
 window.KuromojiAnalyzer = require('kuroshiro-analyzer-kuromoji');
 window.kuroshiro = new Kuroshiro();
 
+const kuroshiroConfig = {
+  to: 'hiragana',
+  mode: 'normal',
+  romajiSystem: 'hepburn'
+};
+
+/* Enable Bootstrap popovers */
+const popovers = $('[data-bs-toggle="popover"]').each((i, el) => {
+  new bootstrap.Popover(el, {
+    sanitizeFn(content) {
+      return content;
+    }
+  });
+});
+
 /* Bind Input Method Editor */
 $('.wanakana').each((i, elm) => {
   Wanakana.bind(elm);
@@ -99,30 +114,48 @@ $('#deconjugator form').submit((e) => {
 });
 
 /* Init Kuroshiro */
-$('#furigana .textarea-container button').click(() => {
-  window.kuroshiro = new Kuroshiro();
-
-  $('#furigana-result').removeClass('text-danger');
-  $('#furigana-result').html('<div class="spinner-border"></div>');
-  $('#furigana .textarea-container button').addClass('d-none');
+$('#convert .textarea-container button').click(() => {
+  $('#convert-result').removeClass('text-danger');
+  $('#convert-result').html('<div class="spinner-border"></div>');
+  $('#convert .textarea-container button').addClass('d-none');
 
   kuroshiro.init(new KuromojiAnalyzer())
     .then(() => {
-      $('#furigana-result').html('Result will be showed here');
-      $('#furigana textarea').attr('disabled', false);
+      $('#convert-result').html('Result will be shown here');
+      $('#convert textarea, #convert-settings :not(:last-child)')
+        .attr('disabled', false);
     })
     .catch((e, a) => {
-      $('#furigana .textarea-container button').removeClass('d-none');
-      $('#furigana-result').html('Unexpected error: ' + e);
-      $('#furigana-result').addClass('text-danger');
+      $('#convert .textarea-container button').removeClass('d-none');
+      $('#convert-result').html('Unexpected error: ' + e);
+      $('#convert-result').addClass('text-danger');
     });
 });
 
-/* Furigana auto-submit */
-$('#furigana textarea').on('input', async function () {
-  const text = this.value;
-  const result = await kuroshiro.convert(text, { to: 'hiragana', mode: 'furigana' });
-  const display = result || 'Result will be showed here';
+/* Converter generate function */
+function convert() {
+  const text = $('#convert textarea').val();
 
-  $('#furigana-result').html(display);
+  kuroshiro.convert(text, kuroshiroConfig)
+    .then((result) => {
+      const display = result || 'Result will be shown here';
+
+      $('#convert-result').html(display);
+    });
+}
+
+/* Converter auto-submit */
+$('#convert textarea').on('input', convert);
+
+/* Converter settings */
+$('#convert-settings select').change(function () {
+  const name = this.name;
+  const option = this.value.toLowerCase();
+
+  kuroshiroConfig[name] = option;
+
+  const isRomaji = kuroshiroConfig.to === 'romaji';
+
+  $('#convert-settings [name="romajiSystem"]').attr('disabled', !isRomaji);
+  convert();
 });

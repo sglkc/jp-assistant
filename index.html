@@ -58,16 +58,40 @@
 					</div>
 				</div>
 		</section>
-		<section id="furigana" class="container-fluid py-4">
+		<section id="convert" class="container-fluid py-4">
 			<div class="container">
-				<div class="fw-bold">🔤 Furigana Generator</div>
-				<div class="fw-light">Generates furigana (kanji readings on top) in real-time.</div>
+				<div class="fw-bold">🔤 Kanji to Kana and Romanization</div>
+				<div class="fw-light">
+					This tool converts Japanese text to hiragana, katakana, or romaji. Includes other romanization systems and also
+					<u class="link-secondary" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-custom-class="bg-white small" title="送(oku)り仮名(gana)">okurigana</u>
+					and
+					<u class="link-secondary" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-custom-class="bg-white pt-2 fs-6" data-bs-html="true" title="<ruby>振<rt>fu</rt>り仮名<rt>gana</rt></ruby>">furigana</u>
+					mode.
+				</div>
 				<div class="small">(Due to limitations, only basic readings are used and may not be 100% accurate.)</div>
 				<div class="textarea-container">
-					<textarea class="wanakana form-control mt-2" placeholder="Type here" disabled></textarea>
+					<textarea class="form-control mt-2" placeholder="Type here" disabled></textarea>
 					<button class="btn btn-primary">Initialize</button>
 				</div>
-				<div id="furigana-result" class="mt-2">
+				<div id="convert-settings" class="mt-2 hstack gap-2">
+					<select class="form-select form-select-sm" name="to" disabled>
+						<option selected>Hiragana</option>
+						<option>Katakana</option>
+						<option>Romaji</option>
+					</select>
+					<select class="form-select form-select-sm" name="mode" disabled>
+						<option selected>Normal</option>
+						<option>Spaced</option>
+						<option>Okurigana</option>
+						<option>Furigana</option>
+					</select>
+					<select class="form-select form-select-sm" name="romajiSystem" disabled>
+						<option selected>Hepburn</option>
+						<option>Nippon</option>
+						<option>Passport</option>
+					</select>
+				</div>
+				<div id="convert-result" class="mt-2 text-break">
 					<span>You have initialize the language processor before using this!</span>
 				</div>
 			</div>
