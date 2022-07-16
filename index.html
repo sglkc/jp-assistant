@@ -23,6 +23,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#deconjugator">Deconjugator</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#converter">Converter</a>
+					</li>
 				</ul>
 			</nav>
 		</header>
@@ -58,7 +61,7 @@
 					</div>
 				</div>
 		</section>
-		<section id="convert" class="container-fluid py-4">
+		<section id="converter" class="container-fluid py-4">
 			<div class="container">
 				<div class="fw-bold">🔤 Kanji to Kana and Romanization</div>
 				<div class="fw-light">
@@ -73,27 +76,43 @@
 					<textarea class="form-control mt-2" placeholder="Type here" disabled></textarea>
 					<button class="btn btn-primary">Initialize</button>
 				</div>
-				<div id="convert-settings" class="mt-2 hstack gap-2">
-					<select class="form-select form-select-sm" name="to" disabled>
-						<option selected>Hiragana</option>
-						<option>Katakana</option>
-						<option>Romaji</option>
-					</select>
-					<select class="form-select form-select-sm" name="mode" disabled>
-						<option selected>Normal</option>
-						<option>Spaced</option>
-						<option>Okurigana</option>
-						<option>Furigana</option>
-					</select>
-					<select class="form-select form-select-sm" name="romajiSystem" disabled>
-						<option selected>Hepburn</option>
-						<option>Nippon</option>
-						<option>Passport</option>
-					</select>
+				<div id="converter-settings" class="mt-2">
+					<div class="hstack gap-2 mb-2">
+						<select class="form-select form-select-sm" name="to" disabled>
+							<option selected>Hiragana</option>
+							<option>Katakana</option>
+							<option>Romaji</option>
+						</select>
+						<select class="form-select form-select-sm" name="mode" disabled>
+							<option selected>Normal</option>
+							<option>Spaced</option>
+							<option>Okurigana</option>
+							<option>Furigana</option>
+						</select>
+						<select class="form-select form-select-sm" name="romajiSystem" disabled>
+							<option selected>Hepburn</option>
+							<option>Nippon</option>
+							<option>Passport</option>
+						</select>
+					</div>
+					<div class="hstack gap-2">
+						<div>
+							<label class="small">Line Height</label>
+							<input type="range" class="form-range" value=".1" min="1.5" max="2.5" disabled>
+						</div>
+						<div>
+							<label class="small">Font Size</label>
+							<input type="range" class="form-range" value="16" min="16" max="32" name="" disabled>
+						</div>
+						<div>
+							<label class="small">Furigana Size</label>
+							<input type="range" class="form-range" value="11" min="11" max="25" name="rt" disabled>
+						</div>
+					</div>
 				</div>
-				<div id="convert-result" class="mt-2 text-break">
-					<span>You have initialize the language processor before using this!</span>
-				</div>
+			</div>
+			<div id="converter-result" class="container mt-2 text-break">
+				<span>You have initialize the language processor before using this!</span>
 			</div>
 		</section>
 		<footer class="py-4 small-sm">
