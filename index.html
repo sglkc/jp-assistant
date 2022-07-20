@@ -21,6 +21,9 @@
 						<a class="nav-link" href="#ime">IME</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="#conjugator">Conjugator</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="#deconjugator">Deconjugator</a>
 					</li>
 					<li class="nav-item">
@@ -39,6 +42,38 @@
 				</div>
 			</div>
 		</section>
+		<section id="conjugator" class="container-fluid py-4">
+			<div class="container">
+				<div class="fw-bold">🔗 Verb Conjugator</div>
+				<div class="fw-light">Type in the verb you want to conjugate and check the target conjugation (and auxilaries).</div>
+				<div class="small">(Currently cannot detect Godan or Ichidan verbs automatically, and not every combination is possible.)</div>
+				<form autocomplete="off">
+					<div class="mt-2 mb-2 input-group">
+						<input class="wanakana form-control" placeholder="Type here" name="conjugate" required>
+						<button class="btn btn-primary" type="submit">Conjugate</button>
+					</div>
+					<ul id="conjugator-results" class="d-none my-2 list-group list-group-horizontal fw-bold"></ul>
+					<div id="conjugator-settings" class="mt-1 row">
+						<div class="col-12 mb-1">
+							<div class="form-check form-switch">
+								<input class="form-check-input" type="checkbox" id="ichidan" name="ichidan">
+								<label class="form-check-label" for="ichidan">Is Ichidan verb</label>
+							</div>
+						</div>
+						<div class="col-12 col-sm-4 col-md-3">
+							<div class="fw-bold">Conjugations</div>
+						</div>
+						<div class="col-12 col-sm-8 col-md-9">
+							<div class="fw-bold">Auxilaries</div>
+							<div id="conjugator-template" class="d-none form-check form-check-inline">
+								<label class="form-check-label small"></label>
+								<input class="form-check-input" type="checkbox" required>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
 		<section id="deconjugator" class="container-fluid py-4">
 			<div class="container">
 				<div class="fw-bold">🖇️ Verb Deconjugator</div>
@@ -52,7 +87,7 @@
 			<div id="deconjugator-list" class="row justify-content-center g-2 px-2 px-md-3 px-lg-5 mx-0 mx-md-3 mx-lg-5">
 				<div id="deconjugator-template" class="d-none col-6 col-sm-4 col-lg-3">
 					<div class="card p-0 border-0 bg-transparent text-center">
-						<a class="card-header h5 fw-semibold text-bg-secondary" href="" target="_blank" title="Open in Jisho.org"></a>
+						<a class="card-header h5 fw-semibold bg-info" href="" target="_blank" title="Open in Jisho.org"></a>
 						<div class="card-body bg-light rounded-bottom p-2 flex-grow-0">
 							<div class="card-text">
 								<ul class="list-group small"></ul>
