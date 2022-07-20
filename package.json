@@ -21,6 +21,7 @@
     "browserify": "^17.0.0",
     "budo": "^11.7.0",
     "jp-verbs": "^1.0.1",
+    "kamiya-codec": "^4.5.0",
     "kuroshiro": "^1.1.2",
     "kuroshiro-analyzer-kuromoji": "^1.1.0",
     "wanakana": "^5.0.2"

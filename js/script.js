@@ -3,6 +3,7 @@ window.Deconjugator = require('jp-verbs');
 window.Kuroshiro = require('kuroshiro');
 window.KuromojiAnalyzer = require('kuroshiro-analyzer-kuromoji');
 window.kuroshiro = new Kuroshiro();
+window.Kamiya = require('kamiya-codec');
 
 const kuroshiroConfig = {
   to: 'hiragana',
