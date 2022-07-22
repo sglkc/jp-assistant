@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Japanese utilities from an input method to furigana generator",
   "scripts": {
-    "build": "browserify js/script.js -o js/bundle.js",
-    "dev": "budo js/script.js:js/bundle.js --live -- --debug"
+    "build": "browserify js/require.js -o js/bundle.js",
+    "dev": "budo js/require.js:js/bundle.js --wg '**/*.{html,js,css}' --live -- --debug"
   },
   "repository": {
     "type": "git",
