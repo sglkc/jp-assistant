@@ -11,7 +11,7 @@ $('#converter .textarea-container button').click(() => {
   $('#converter-result').html('<div class="spinner-border"></div>');
   $('#converter .textarea-container button').addClass('d-none');
 
-  kuroshiro.init(new KuromojiAnalyzer())
+  kuroshiro.init(new KuromojiAnalyzer({ dictPath: '/dist/dict' }))
     .then(() => {
       $('#converter-result').html('Result will be shown here');
       $('#converter-result').css('white-space', 'pre-wrap');

@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "description": "Japanese language assistant website from an input method to a converter",
   "scripts": {
-    "build": "browserify js/require.js -o js/bundle.js",
-    "dev": "budo js/require.js:js/bundle.js --wg '**/*.{html,js,css}' --live -- --debug"
+    "build": "browserify js/require.js -o dist/bundle.js",
+    "copy": "copy-for-browser",
+    "dev": "budo js/require.js:dist/bundle.js --wg '**/*.{html,js,css}' --live -- --debug"
+  },
+  "browserCopy": {
+    "dist/": [
+        "kuromoji/dict/"
+    ]
   },
   "repository": {
     "type": "git",
@@ -20,6 +26,7 @@
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "budo": "^11.7.0",
+    "copy-for-browser": "^2.0.3",
     "jp-verbs": "^1.0.1",
     "kamiya-codec": "^4.5.0",
     "kuroshiro": "^1.1.2",
