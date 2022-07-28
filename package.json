@@ -1,21 +1,21 @@
 {
-  "name": "jp-utilities",
+  "name": "jp-assistant",
   "version": "1.0.0",
-  "description": "Japanese utilities from an input method to furigana generator",
+  "description": "Japanese language assistant website from an input method to a converter",
   "scripts": {
     "build": "browserify js/require.js -o js/bundle.js",
     "dev": "budo js/require.js:js/bundle.js --wg '**/*.{html,js,css}' --live -- --debug"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sglkc/jp-utilities.git"
+    "url": "git+https://github.com/sglkc/jp-assistant.git"
   },
   "author": "sglkc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sglkc/jp-utilities/issues"
+    "url": "https://github.com/sglkc/jp-assistant/issues"
   },
-  "homepage": "https://github.com/sglkc/jp-utilities#readme",
+  "homepage": "https://github.com/sglkc/jp-assistant#readme",
   "devDependencies": {
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
